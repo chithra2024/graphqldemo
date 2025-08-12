@@ -1,5 +1,5 @@
 GraphQL schema or API schema
-
+============================
 add dependency: 
 
   <!-- Spring GraphQL -->
@@ -249,6 +249,7 @@ for each author we select all books thru multiple sql statement. this is called 
 
 spring.jpa.open-in-view=false
 
-// thru failed to lazily initialize a collection
-==============================================
+through failed to lazily initialize a collection
+
+
 
