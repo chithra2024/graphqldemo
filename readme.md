@@ -1,5 +1,5 @@
 GraphQL schema or API schema
-=============================
+
 add dependency: 
 
   <!-- Spring GraphQL -->
@@ -30,7 +30,6 @@ type Book {
     publisher: String
 }
 
-==================================
 
 package com.example.demo.controller;
 
@@ -54,14 +53,12 @@ public class AuthorController {
         return authorRepository.findAll();
     }
 }
-===============================================
 
 application.properties
 
 
 spring.graphql.graphiql.enabled = true
 
-===============================================
 
 localhost:8086/graphiql
 
@@ -75,7 +72,7 @@ query {
     }
   }
 }
-================================================
+
 Example2:
 
 type Query{
@@ -99,14 +96,12 @@ type Book {
 
 }
 
-=============================================
 @QueryMapping
 Optional<Author> authorById(@Argument Long id){
   return authorRepository.findById(id);
 
 }
 
-=============================================
 
 
 query {
@@ -117,7 +112,6 @@ query {
    name
  }
 
-============================================
 
 example3:
 
@@ -141,10 +135,9 @@ query {
   }
 
 }
-===================================================
 //single http request gives http response
 return all the queries or required information
-=================================================
+
 example 4: Mutation
 
 
@@ -181,7 +174,6 @@ type Book {
 
 }
 
-==========================================
 @MutationMapping
 private BookRepository bookRepository;
 
@@ -197,7 +189,6 @@ return bookRepository.save(b);
 // input parameters are DTOs
 
 record BookInput(String title, String publisher, Long authorId){}
-==================================================
 
 mutation{
 
@@ -209,7 +200,6 @@ publisher:"Manning", authorId:2})
 
 }
 
-===============================================
 //verification
 query{
 
@@ -225,12 +215,10 @@ query{
 }
 }
 }
-===============================================
 
 
 logging.level.sql=debug
 
-================================================
 
 query {
 
@@ -239,7 +227,6 @@ query {
     name
 }}
 //verify console
-===============================================
 
 query{
 
@@ -259,11 +246,9 @@ query{
 // verify console
 
 for each author we select all books thru multiple sql statement. this is called N+1 problem.
-==============================================
 
 spring.jpa.open-in-view=false
 
 // thru failed to lazily initialize a collection
-============================================
 ==============================================
 
